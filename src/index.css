@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #D3B04B;
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url('./Fonts/Axiforma-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('./Fonts/Axiforma-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url('./Fonts/Axiforma-Heavy.ttf');
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url('./Fonts/Axiforma-ExtraBold.ttf');
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+
+html, body {
+  margin: 0;
+  font-family: 'Axiforma', sans-serif;
+  line-height: normal;
+}
+
+canvas {
+  @apply w-full top-0 left-0 overflow-hidden -z-10;
+  height: -webkit-fill-available;
+}
+
+@layer components {
+  .nav-link {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  section {
+    @apply relative h-screen text-white;
+  }
+
+  .section-container {
+    @apply absolute w-full h-full z-10 top-0 left-0 overflow-x-clip;
+  }
+
+  .scroll-container {
+    @apply w-full flex flex-col items-center justify-center text-white;
+    background: linear-gradient(180deg, rgba(29, 29, 29, 0) -20%, #1d1d1d9e 100%);
+  }
+
+  .scroll-item {
+    @apply w-full h-screen flex items-center justify-center;
+
+  }
+
+  .card-wrapper {
+    @apply flex flex-col items-start justify-center font-black break-normal;
+    width: 1580px;
+  }
+
+  .card {
+    @apply w-2/5 p-10 text-4xl leading-normal;
+  }
+
+  .card>img {
+    @apply border border-white rounded-md p-8;
+  }
+
+  .card-title {
+    @apply text-primary text-6xl m-0;
+  }
+
+  .card-content {
+    @apply my-2 uppercase;
+    width: 680px;
+  }
+
+  .card-content>span {
+    @apply text-primary;
+  }
+
+  .controls-filter {
+    background: linear-gradient(180deg, rgba(24, 24, 24, 0) 0%, rgba(24, 24, 24, 0.8) 100%);
+    backdrop-filter: blur(7.5px);
+  }
+
+  .colorSlider {
+    background: linear-gradient(190deg, #04FFF0 0%, #F1FF4A 100%);
+  }
+
+  .slider {
+    @apply w-2/4 appearance-none;
+    height: 2px;
+    cursor: pointer;
+  }
+
+  .slider::-webkit-slider-thumb {
+    @apply bg-white border-2 border-solid border-primary rounded-full;
+    width: 20px;
+    -webkit-appearance: none;
+    height: 20px;
+    cursor: ew-resize;
+  }
+
+  .switch {
+    @apply relative inline-block w-12 h-[15px] bg-white rounded-full;
+  }
+
+  .checkbox:hover:before {
+    @apply bg-primary;
+  }
+
+  .checkbox:before {
+    @apply bg-primary rounded-full absolute h-7 w-7 left-0 -top-1.5;
+    content: "";
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input:checked+.checkbox {
+    background-color: #2196F3;
+  }
+
+  input:focus+.checkbox {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.checkbox:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .showcase {
+    background: linear-gradient(180deg, rgba(29, 29, 29, 0) 7.88%, #1D1D1D 100%);
+    mix-blend-mode: multiply;
+  }
+
+  .scene5 {
+    background-image: url('./assets/promotion-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .scene5>.section-container {
+    background: linear-gradient(360deg, #181818 0%, rgba(24, 24, 24, 0) 50.52%, #181818 100%);
+    opacity: 1;
+  }
+
+  .form-block {
+    @apply py-2;
+  }
+
+  .form-element {
+    @apply p-5 uppercase font-light border border-solid border-[#9B9689] bg-[#342B10];
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"] {
+    @apply p-5 border border-solid border-[#9B9689] bg-[#342B10];
+  }
+
+  textarea {
+    @apply p-5 w-full resize-none border border-solid border-[#9B9689] bg-[#342B10];
+  }
+
+  .vent {
+    background-image: url('./assets/vent_airflow.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .vaccum {
+    background-image: url('./assets/vacuum_cover.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+}
